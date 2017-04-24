@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Janus:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Janus-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Janus:war exploded" />
+    </root>
+  </artifact>
+</component>
