@@ -11,27 +11,30 @@
 
     <properties>
         <spring-data-jpa.version>1.11.3.RELEASE</spring-data-jpa.version>
-        <spring-core>4.3.8.RELEASE</spring-core>
+        <spring>4.3.8.RELEASE</spring>
         <hibernate-entitymanager.version>5.2.10.Final</hibernate-entitymanager.version>
+        <javax.servlet-api.version>4.0.0-b05</javax.servlet-api.version>
+        <mysql-connector-java.version>5.1.42</mysql-connector-java.version>
+        <commons-dbcp2.version>2.1.1</commons-dbcp2.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${spring-core}</version>
+            <version>${spring}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring-core}</version>
+            <version>${spring}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${spring-core}</version>
+            <version>${spring}</version>
         </dependency>
 
         <dependency>
@@ -41,9 +44,45 @@
         </dependency>
 
         <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet-api.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate-entitymanager.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>${commons-dbcp2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
